@@ -8,7 +8,11 @@ function MainContainer() {
 
   function handleBuyStockClick(addedStock) {
     setPortfolio([...portfolio, addedStock])
+  }
 
+  //remove stock fromthe portfolio
+  function handleSellStock(stock) {
+    setPortfolio(portfolio.filter((s) => s.id !==stock.id))
   }
   return (
     <div>
@@ -18,7 +22,10 @@ function MainContainer() {
           <StockContainer onBuyStock={handleBuyStockClick} />
         </div>
         <div className="col-4">
-          <PortfolioContainer portfolio={portfolio} />
+          <PortfolioContainer 
+          portfolio={portfolio}
+          onSellStock={handleSellStock}  
+        />
         </div>
       </div>
     </div>

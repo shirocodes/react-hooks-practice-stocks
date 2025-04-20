@@ -17,7 +17,7 @@ function StockContainer({onBuyStock}) {
         <Stock 
           key={stock.id}
           stock={stock}
-          onBuyStock={onBuyStock}
+          onStockClick={onBuyStock}
         />
       ))}
     </div>

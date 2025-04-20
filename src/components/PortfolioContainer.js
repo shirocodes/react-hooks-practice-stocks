@@ -1,8 +1,7 @@
 import React from "react";
 import Stock from "./Stock";
 
-function PortfolioContainer({portfolio}) {
-
+function PortfolioContainer({portfolio, onSellStock}) {
  
   return (
     <div>
@@ -11,9 +10,9 @@ function PortfolioContainer({portfolio}) {
         <Stock
           key={stock.id}
           stock={stock} 
+          onStockClick={onSellStock}
         />
       ))}
-      {/* { render stock portfolio  } */}
     </div>
   );
 }
