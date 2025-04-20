@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+function StockContainer({onBuyStock}) {
   const [stocks, setStocks] = useState([])
 
   useEffect(() => {
@@ -17,6 +17,7 @@ function StockContainer() {
         <Stock 
           key={stock.id}
           stock={stock}
+          onBuyStock={onBuyStock}
         />
       ))}
     </div>
